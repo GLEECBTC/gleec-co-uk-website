@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#8d34ff">
+    <meta name="description" content="Gleec is preparing something new. Our website is on its way — see you soon at gleec.co.uk.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gleec — Coming soon">
+    <meta property="og:description" content="Our new website is on its way. See you soon at gleec.co.uk.">
+    <meta property="og:url" content="https://gleec.co.uk/">
+    <meta property="og:image" content="https://gleec.co.uk/gleec-logo.png">
+    <meta name="twitter:card" content="summary">
+    <title>Gleec — Coming soon</title>
+    <link rel="canonical" href="https://gleec.co.uk/">
+    <link rel="icon" type="image/png" href="gleec-logo.png">
+    <link rel="apple-touch-icon" href="gleec-logo.png">
+    <style>
+      :root {
+        color-scheme: dark;
+        --brand: #8d34ff;
+        --brand-deep: #6a1fd6;
+        --brand-light: #a866ff;
+        --white: #ffffff;
+        --soft: rgba(255, 255, 255, 0.82);
+        --line: rgba(255, 255, 255, 0.24);
+      }
+
+      * { box-sizing: border-box; }
+      html { min-width: 280px; }
+      body {
+        margin: 0;
+        min-height: 100svh;
+        background:
+          radial-gradient(circle at 85% 10%, var(--brand-light) 0, transparent 45%),
+          radial-gradient(circle at 10% 100%, var(--brand-deep) 0, transparent 55%),
+          var(--brand);
+        color: var(--white);
+        font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      a { color: inherit; text-underline-offset: 4px; }
+      a:focus-visible { outline: 2px solid var(--white); outline-offset: 6px; border-radius: 4px; }
+      ::selection { background: var(--white); color: var(--brand); }
+
+      .page {
+        position: relative;
+        max-width: 1280px;
+        min-height: 100svh;
+        margin-inline: auto;
+        padding: 0 clamp(16px, 5vw, 72px);
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Oversized outline of the Gleec mark in the background */
+      .mark-bg {
+        position: absolute;
+        right: -12%;
+        top: 50%;
+        width: min(78vw, 820px);
+        transform: translateY(-50%);
+        opacity: 0.12;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      header, main, footer { position: relative; z-index: 1; }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        min-height: 96px;
+        border-bottom: 1px solid var(--line);
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+      }
+      .brand img { width: 44px; height: 44px; border-radius: 12px; box-shadow: 0 0 0 1px var(--line); }
+      .brand span { font-size: 28px; font-weight: 700; letter-spacing: -0.04em; }
+      .region {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--soft);
+      }
+
+      main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-block: clamp(48px, 10vh, 120px);
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        align-self: flex-start;
+        margin: 0 0 28px;
+        padding: 8px 16px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .badge::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--white);
+        animation: pulse 2s ease-in-out infinite;
+      }
+      h1 {
+        margin: 0;
+        max-width: 12ch;
+        font-size: clamp(48px, 9vw, 120px);
+        line-height: 0.98;
+        letter-spacing: -0.05em;
+        font-weight: 700;
+      }
+      .lead {
+        max-width: 460px;
+        margin: 28px 0 0;
+        color: var(--soft);
+        font-size: clamp(16px, 1.6vw, 19px);
+        line-height: 1.65;
+      }
+
+      footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 12px 24px;
+        padding-block: 24px;
+        border-top: 1px solid var(--line);
+        color: var(--soft);
+        font-size: 13px;
+      }
+      footer p { margin: 0; }
+      footer a { color: var(--white); text-decoration: none; }
+      footer a:hover { text-decoration: underline; }
+
+      @keyframes pulse {
+        0%, 100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6); }
+        50% { box-shadow: 0 0 0 6px rgba(255, 255, 255, 0); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .badge::before { animation: none; }
+      }
+      @media (max-width: 640px) {
+        header { min-height: 76px; }
+        .brand img { width: 36px; height: 36px; border-radius: 10px; }
+        .brand span { font-size: 24px; }
+        .region { font-size: 11px; }
+        .mark-bg { right: -35%; width: 120vw; opacity: 0.1; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <svg class="mark-bg" viewBox="0 0 200 260" aria-hidden="true" focusable="false">
+        <g fill="none" stroke="#fff" stroke-width="3">
+          <path d="M88 0h24v36h-24z M88 224h24v36h-24z"/>
+          <path d="M100 36c-44 0-72 26-72 64v60c0 38 28 64 72 64s72-26 72-64v-50H80v34h56v16c0 20-14 32-36 32s-36-12-36-32v-60c0-20 14-32 36-32 18 0 30 8 34 22h38c-6-34-32-54-72-54z"/>
+        </g>
+      </svg>
+
+      <header>
+        <a class="brand" href="https://gleec.co.uk/" aria-label="Gleec home">
+          <img src="gleec-logo.png" alt="" width="44" height="44">
+          <span>gleec</span>
+        </a>
+        <div class="region">United Kingdom</div>
+      </header>
+
+      <main>
+        <p class="badge">Website in the making</p>
+        <h1>Something new is coming.</h1>
+        <p class="lead">We’re building a new home for Gleec in the UK. Our website is on its way — check back soon.</p>
+      </main>
+
+      <footer>
+        <p>© 2026 Gleec. All rights reserved.</p>
+        <a href="https://gleec.co.uk/">gleec.co.uk</a>
+      </footer>
+    </div>
+  </body>
+</html>
